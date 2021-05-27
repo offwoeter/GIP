@@ -4,43 +4,30 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    public image healthbar;
-    public float max_health = 100f;
-    public float cur_health = 0f;
-    public bool alive = true;
-    
-    
+
+    public float max_Health = 100f;
+    public float cur_Health = 0f;
+    public GameObject healthBar;
     // Start is called before the first frame update
     void Start()
     {
-        alive = true;
-        cur_health = max_health;
-        SetHealthBar ();
-        InvokeRepeating("DoDamage", 1f, 5f);
-    }
-    void DoDamage()
-    {
-        TakeDamage(10f);
-    }
-    public void TakeDamage(float amount)
-    {
-        if (!alive)
-        {
-            return;
-        }
-        if(cur_health <= 0)
-        {
-            cur_health = 0;
-            alive = false;
-        }
-        cur_health -= amount;
-        SetHealthBar ();
+        cur_Health = max_Health;
+        InvokeRepeating("decreasehealth", 1f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float my_health = cur_health / max_health;
-        healthbar.transform.localscale = new Vector3(Mathf.clamp(my_health, 0f, 1f), healthbar.transform.localscale.y, healthbar.transform.localscale.x);
+
+    }
+    void decreasehealth()
+    {
+        cur_Health -= 2f;
+        float calc_Health = cur_Health / max_Health;
+        SetHealthBar(calc_Health);
+    }
+    public void SetHealthBar(float myHealth)
+    {
+        healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 }
