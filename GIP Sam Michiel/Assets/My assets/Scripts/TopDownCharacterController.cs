@@ -22,23 +22,23 @@ namespace Cainos.PixelArtTopDown_Basic
             if (Input.GetKey(KeyCode.Q))
             {
                 dir.x = -1;
-                animator.SetInteger("Direction", 3);
+                animator.SetFloat("Direction", 3f);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 dir.x = 1;
-                animator.SetInteger("Direction", 2);
+                animator.SetFloat("Direction", 2f);
             }
 
             if (Input.GetKey(KeyCode.Z))
             {
                 dir.y = 1;
-                animator.SetInteger("Direction", 1);
+                animator.SetFloat("Direction", 1f);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 dir.y = -1;
-                animator.SetInteger("Direction", 0);
+                animator.SetFloat("Direction", 0f);
             }
 
             dir.Normalize();
