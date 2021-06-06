@@ -12,7 +12,6 @@ public class HealthScript : MonoBehaviour
     void Start()
     {
         cur_Health = max_Health;
-        InvokeRepeating("decreasehealth", 1f, 1f);
     }
 
     // Update is called once per frame
@@ -20,11 +19,18 @@ public class HealthScript : MonoBehaviour
     {
 
     }
-    void decreasehealth()
+    public void UpdateHealth(float mod)
     {
-        cur_Health -= 2f;
-        float calc_Health = cur_Health / max_Health;
-        SetHealthBar(calc_Health);
+        cur_Health += mod;
+        if(cur_Health > max_Health)
+        {
+            cur_Health = max_Health;
+        }
+        else if( cur_Health <= 0f)
+        {
+            cur_Health = 0f;
+            Debug.Log("Mission Failed");
+        }
     }
     public void SetHealthBar(float myHealth)
     {
