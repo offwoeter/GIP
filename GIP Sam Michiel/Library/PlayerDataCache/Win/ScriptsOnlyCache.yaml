@@ -8,7 +8,7 @@ ScriptsOnlyBuild:
     - HealthScript
     - LevelControl
     - LoadSceneOnClick
-    - MenuControlScript
+    - PauseMenu
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
@@ -78,12 +78,30 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 632}
     - Class: 114
-      Script: {instanceID: 11964}
+      Script: {instanceID: 11784}
     - Class: 114
-      Script: {instanceID: 14208}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 32858}
+      Script: {instanceID: 12214}
+    - Class: 114
+      Script: {instanceID: 13060}
+    - Class: 114
+      Script: {instanceID: 14030}
+    - Class: 114
+      Script: {instanceID: 14134}
+    - Class: 114
+      Script: {instanceID: 14472}
+    - Class: 114
+      Script: {instanceID: 14886}
+    - Class: 114
+      Script: {instanceID: 15006}
+    - Class: 114
+      Script: {instanceID: 15762}
+    - Class: 114
+      Script: {instanceID: 38788}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -92,6 +110,12 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 156049354
       Script: {instanceID: 0}
@@ -120,6 +144,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 58
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 65
@@ -137,20 +163,32 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 632}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11784}
     - Class: 114
-      Script: {instanceID: 12164}
+      Script: {instanceID: 12088}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 13730}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 14208}
+      Script: {instanceID: 13748}
     - Class: 114
-      Script: {instanceID: 15078}
+      Script: {instanceID: 14030}
+    - Class: 114
+      Script: {instanceID: 14134}
+    - Class: 114
+      Script: {instanceID: 14472}
+    - Class: 114
+      Script: {instanceID: 14886}
+    - Class: 114
+      Script: {instanceID: 15006}
+    - Class: 114
+      Script: {instanceID: 38788}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -192,33 +230,33 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11784}
     - Class: 114
-      Script: {instanceID: 12290}
+      Script: {instanceID: 12214}
     - Class: 114
-      Script: {instanceID: 13136}
+      Script: {instanceID: 13060}
     - Class: 114
-      Script: {instanceID: 13204}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 14010}
+      Script: {instanceID: 13936}
     - Class: 114
-      Script: {instanceID: 14104}
+      Script: {instanceID: 14030}
     - Class: 114
-      Script: {instanceID: 14546}
+      Script: {instanceID: 14472}
     - Class: 114
-      Script: {instanceID: 14570}
+      Script: {instanceID: 14496}
     - Class: 114
-      Script: {instanceID: 14958}
+      Script: {instanceID: 14886}
     - Class: 114
-      Script: {instanceID: 15078}
+      Script: {instanceID: 15006}
     - Class: 114
-      Script: {instanceID: 15332}
+      Script: {instanceID: 15260}
     - Class: 114
-      Script: {instanceID: 15430}
+      Script: {instanceID: 15358}
     - Class: 114
-      Script: {instanceID: 15630}
+      Script: {instanceID: 15558}
     - Class: 114
-      Script: {instanceID: 15834}
+      Script: {instanceID: 15762}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -286,7 +324,7 @@ ScriptsOnlyBuild:
     className: GroupTrack
   - hash:
       serializedVersion: 2
-      Hash: cd38a9f4d1be1f46ca43c8d446ddd151
+      Hash: f59be8acf73ef1d3ed6434a93785aa96
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyFollow
@@ -442,7 +480,7 @@ ScriptsOnlyBuild:
     className: SpriteLibrary
   - hash:
       serializedVersion: 2
-      Hash: 3e4fdf0f3fa23c6b388c9c1e913031df
+      Hash: 27b1590f5fed2c3636ac627b082c67f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthScript
@@ -1000,12 +1038,6 @@ ScriptsOnlyBuild:
     className: ExitOnClick
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerMovement
-  - hash:
-      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1162,10 +1194,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: c8c5e65e9fb858572516474d6e2102bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MenuControlScript
+    className: PauseMenu
   platform: 5
   scenePathNames:
   - Assets/My assets/Scenes/StartMenu.unity

@@ -69,7 +69,7 @@ public class EnemyFollow : MonoBehaviour
                 GameObject Player = GameObject.FindWithTag("Player");
                 if (Player != null)
                 {
-                    health_script = Player.GetComponent<HealthScript>().UpdateHealth(-attackDamage);
+                    //health_script = Player.GetComponent<HealthScript>().UpdateHealth(-attackDamage);
                 }
 
                 canAttack = 0f;
