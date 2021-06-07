@@ -1,39 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
+    private float health = 0f;
+    [SerializeField] private float maxHealth = 100f;
 
-    public float max_Health = 100f;
-    public float cur_Health = 0f;
-    public GameObject healthBar;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        cur_Health = max_Health;
+        health = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void UpdateHealth(float mod)
     {
-        cur_Health += mod;
-        if(cur_Health > max_Health)
+        health += mod;
+
+        if (health > maxHealth)
         {
-            cur_Health = max_Health;
+            health = maxHealth;
         }
-        else if( cur_Health <= 0f)
+        else if (health <= 0f)
         {
-            cur_Health = 0f;
-            Debug.Log("Mission Failed");
+            health = 0f;
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
         }
-    }
-    public void SetHealthBar(float myHealth)
-    {
-        healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 }
