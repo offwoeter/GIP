@@ -56,8 +56,7 @@ public class EnemyFollow : MonoBehaviour
             }
         }
     }
-
-
+    public HealthScript health_script;
 
     private void OnCollisionStay2D(Collision2D other)
     {
@@ -65,13 +64,7 @@ public class EnemyFollow : MonoBehaviour
         {
             if (attackSpeed <= canAttack)
             {
-                HealthScript health_script;
-                GameObject Player = GameObject.FindWithTag("Player");
-                if (Player != null)
-                {
-                    //health_script = Player.GetComponent<HealthScript>().UpdateHealth(-attackDamage);
-                }
-
+                other.gameObject.GetComponent<HealthScript>().UpdateHealth(-attackDamage);
                 canAttack = 0f;
             }
             else

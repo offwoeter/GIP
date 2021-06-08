@@ -728,6 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackDamage: 10
+  health_script: {fileID: 0}
 --- !u!212 &249480398
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -961,6 +962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackDamage: 10
+  health_script: {fileID: 0}
 --- !u!212 &293618128
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1052,9 +1054,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 308892762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c6a6a97b74d2004d96f12ca46cec86f, type: 3}
+  m_Script: {fileID: 11500000, guid: 01340063703cd7e4e97c9710f00d23fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!4 &308892764
 Transform:
   m_ObjectHideFlags: 0
@@ -1258,6 +1261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackDamage: 10
+  health_script: {fileID: 0}
 --- !u!212 &613908170
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3984,6 +3988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   attackDamage: 10
+  health_script: {fileID: 308892763}
 --- !u!1 &1332104097
 GameObject:
   m_ObjectHideFlags: 0
