@@ -11,6 +11,25 @@ public class EnemyFollow : MonoBehaviour
     private float attackSpeed = 1f;
     private float canAttack;
 
+    private float health;
+    public float maxHealth;
+
+
+    private void Start()
+    {
+        health = maxHealth;
+    }
+
+    public void TakeDamage(float dmg)
+    {
+        health -= dmg;
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Player")
@@ -27,10 +46,6 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     // Update is called once per frame
     private void Update()

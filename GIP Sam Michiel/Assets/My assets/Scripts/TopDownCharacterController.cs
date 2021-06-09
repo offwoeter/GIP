@@ -7,6 +7,8 @@ namespace Cainos.PixelArtTopDown_Basic
     public class TopDownCharacterController : MonoBehaviour
     {
         public float speed;
+        [SerializeField] Transform hand;
+
 
         private Animator animator;
 
@@ -18,6 +20,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
+            RotateHand();
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.Q))
             {
@@ -45,6 +48,11 @@ namespace Cainos.PixelArtTopDown_Basic
             animator.SetBool("IsMoving", dir.magnitude > 0);
 
             GetComponent<Rigidbody2D>().velocity = speed * dir;
+        }
+        void RotateHand()
+        {
+            float angle = Utility.AngleTowardsMouse(hand.position);
+            hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         }
     }
 }
