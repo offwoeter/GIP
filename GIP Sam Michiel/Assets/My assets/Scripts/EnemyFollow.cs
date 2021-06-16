@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -19,25 +20,30 @@ public class EnemyFollow : MonoBehaviour
     {
         health = maxHealth;
     }
-
+    //
+    public bool enemydead = false;
+    //
     public void TakeDamage(float dmg)
     {
         health -= dmg;
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
+            //
+            LevelControl.enemydead = true;
+            //
         }
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             target = other.transform;
         }
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -45,17 +51,18 @@ public class EnemyFollow : MonoBehaviour
             target = null;
         }
     }
-
+    
 
     // Update is called once per frame
     private void Update()
     {
-        if(target != null)
+        if (target != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+        
     }
-    
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Player")
